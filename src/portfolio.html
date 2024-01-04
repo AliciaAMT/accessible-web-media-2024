@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>Accessible Web Media</title>
+		<meta name="description" content="Let us invigorate your website and keep clients coming back for more!" />
+		<link rel="icon" href="./img/favicon.ico" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="description" content="Empower your business with cutting-edge, accessible, and responsive applications designed to thrive on any device! Unveil a portfolio of tailored solutions that elevate your digital presence without the need for an existing web footprint. Our expertise lies in crafting inclusive applications that resonate with your audience, ensuring seamless user experiences and broadening your reach. Explore our work to discover how we can transform your business with adaptable and user-friendly software solutions.">
+		<!-- add bootstrap -->
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" async>
+		<script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous" async></script>
+		<link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
+		<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" async rel="stylesheet" type="text/css" />
+
+		<link rel="stylesheet" href="./styles.css" />
+	</head>
+	<body id="page-top">
+		<div style="display: contents">
+        
+        
+            <script>
+             
+                let currentYear = new Date().getFullYear();
+              </script>
+                 <!-- Navigation-->
+                <!-- Masthead-->
+                <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav" style="background-color: rgba(0, 0, 0, 0.9);">
+                  <div class="container">
+                      <a class="navbar-brand js-scroll-trigger" href="#page-top" style="font-family: Lucida Grande,Lucida Sans Unicode,Lucida Sans,Geneva,Verdana,sans-serif; color: #37fbe7;">Accessible Web Media</a>
+                      <!-- <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                          Menu
+                          <i class="fas fa-bars ml-1"></i>
+                      </button>
+                      <div class="collapse navbar-collapse" id="navbarResponsive"> -->
+                          <!-- <ul class="navbar-nav text-uppercase ml-auto">
+                
+                            @guest
+                              <li class="nav-item">
+                                  <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                              </li>
+                              @if (Route::has('register'))
+                                  <li class="nav-item">
+                                      <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                  </li>
+                              @endif
+                          @else
+                              <li class="nav-item dropdown">
+                                  <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                      {{ Auth::user()->name }} <span class="caret"></span>
+                                  </a>
+            
+                                  <div class="dropdown-menu dropdown-menu-right" style="background-color: #000000;" aria-labelledby="navbarDropdown">
+                                      <a class="dropdown-item" href="{{ route('logout') }}"
+                                         onclick="event.preventDefault();
+                                                       document.getElementById('logout-form').submit();">
+                                          {{ __('Logout') }}
+                                      </a>
+            
+                                      <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                          @csrf
+                                      </form>
+                                  </div>
+                              </li>
+            
+                              <li class="nav-item">
+                                  <a class="nav-link" href="/home">Dashboard</a>
+                              </li>
+                              @if (Auth::user()->email=='Maecheenoi3@gmail.com')
+                              <li class="nav-item">
+                                  <a class="nav-link" href="/admin">Admin</a>
+                              </li>
+                              @endif
+                             
+                          @endguest
+            
+            
+                              <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#services">Services</a></li>
+                              <!--<li class="nav-item"><a class="nav-link js-scroll-trigger" href="#portfolio">Portfolio</a></li>
+                              <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">About</a></li>
+                              <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#team">Team</a></li>
+                              <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#contact">Contact</a></li>
+                          </ul> -->
+                      <!-- </div> -->
+                  </div>
+              </nav>
+              <header class="masthead">
+              </header>
+              <main class="py-4">
+                <div id="projectsCards" class="row"></div>
+
+                <script>
+                let projectsCards = [
+                  {title: 'Password Generator', description: 'Simple app that generates a random password according to length and whether you want to you letters, numbers, or symbols. This is an example of form validation using Angular 17 and Bulma UI.', link: 'https://password-generator-update.vercel.app/', screenshot: '/images/img/password.jpg'},
+                  {title: 'Typing Challenge', description: 'Simple app that provides a typing challenge, and will not accept your answer until it has no mistakes. Mistakes are highlighted in red in real time. This is an example of form validation and events using Angular 17 and Bulma UI.', link: 'https://typing-game-jet-three.vercel.app/', screenshot: '/images/img/typing.jpg'},
+                  {title: 'Hextrix HD', description: 'Arcade game for Web and Play Store, Tetris-inspired with a twist. Features dark mode, dynamic background music toggle using JavaScript. Developed as a Progressive Web App, hosted on Firebase, and published on the Play Store via Android Studio.', link: 'https://hextris-hd-dark-mode-edition.web.app/', screenshot: '/images/img/hex.jpg'},
+                  // Add more projects as needed
+                ];
+                
+                let projectsDiv = document.getElementById('projectsCards');
+                
+                projectsCards.forEach(projectsCard => {
+                  let projectLink = document.createElement('a');
+                  projectLink.href = projectsCard.link;
+                  projectLink.className = 'text-decoration-none col-md-4';
+                
+                  let cardDiv = document.createElement('div');
+                  cardDiv.className = 'card mb-4';
+                
+                  let img = document.createElement('img');
+                  img.src = projectsCard.screenshot;
+                  img.className = 'card-img-top';
+                  img.alt = projectsCard.title;
+                
+                  let cardBodyDiv = document.createElement('div');
+                  cardBodyDiv.className = 'card-body';
+                
+                  let h3 = document.createElement('h3');
+                  h3.className = 'card-title';
+                  h3.textContent = projectsCard.title;
+                
+                  let p = document.createElement('p');
+                  p.className = 'card-text';
+                  p.textContent = projectsCard.description;
+                
+                  cardBodyDiv.appendChild(h3);
+                  cardBodyDiv.appendChild(p);
+                
+                  cardDiv.appendChild(img);
+                  cardDiv.appendChild(cardBodyDiv);
+                
+                  projectLink.appendChild(cardDiv);
+                
+                  projectsDiv.appendChild(projectLink);
+                });
+                </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <script>
+                    let projects = [
+                      {title: 'Password Generator', description: 'Simple app that generates a random password according to length and whether you want to you letters, numbers, or symbols. This is an example of form validation using Angular 17 and Bulma UI.', link: 'https://password-generator-update.vercel.app/', screenshot: '/images/img/password.jpg'},
+                      {title: 'Typing Challenge', description: 'Simple app that provides a typing challenge, and will not accept your answer until it has no mistakes. Mistakes are highlighted in red in real time. This is an example of form validation and events using Angular 17 and Bulma UI.', link: 'https://typing-game-jet-three.vercel.app/', screenshot: '/images/img/typing.jpg'},
+                        {title: 'Hextrix HD', description: 'Arcade game for Web and Play Store, Tetris-inspired with a twist. Features dark mode, dynamic background music toggle using JavaScript. Developed as a Progressive Web App, hosted on Firebase, and published on the Play Store via Android Studio.', link: 'https://hextris-hd-dark-mode-edition.web.app/', screenshot: '/images/img/hex.jpg'},
+                      // Add more projects as needed
+                    ];
+                  </script>
+                  
+                  <div class="container">
+                    <header class="text-center">
+                      <h1>Alicia Taylor</h1>
+                      <p>Software Engineer</p>
+                    </header>
+                  
+                    <section id="about" class="my-5">
+                      <h2>About Me</h2>
+                      <p>I took online classes to learn full stack web development and information architecture. I currently hold several certifications, and am on path for my Bachelor's degree in Computer Science with IT Institute. The projects on this portfolio include my class projects, as well as personal projects.</p>
+                      <p>Feel free to click the cards to explore my skills.</p>
+                    </section>
+                    <section id="portfolio" class="my-5">
+                        <h2 class="text-center w-100">Portfolio</h2>
+                        <div class="row">
+                          {#each projects as project (project.title)}
+                            <a href={project.link} class="text-decoration-none col-md-4">
+                              <div class="card mb-4">
+                                <img src={project.screenshot} class="card-img-top" alt={project.title} />
+                                <div class="card-body">
+                                  <h3 class="card-title">{project.title}</h3>
+                                  <p class="card-text">{project.description}</p>
+                                </div>
+                              </div>
+                            </a>
+                          {/each}
+                        </div>
+                      </section>
+                      
+                      
+                    
+                    <section id="contact" class="my-5">
+                      <h2>Contact Me</h2>
+                      <p>Email: <a href="mailto:admin@accessiblewebmedia.com">admin@AccessibleWebMedia.com</a></p>
+                    </section>
+                  </div>
+                  <style>
+                    .container {
+                      width: 80%;
+                      margin: auto;
+                    }
+                  
+                    header, section {
+                      margin-bottom: 2em;
+                    }
+                    
+                    
+                
+                  .card-img-top {
+                    height: 10rem; /* Adjust as needed */
+                    object-fit: cover;
+                  }
+                
+                
+                  </style>
+
+
+              </main>
+            
+              <!-- Footer-->
+              <footer class="footer py-4">
+                <div class="container">
+                    <div class="row align-items-center justify-content-center">
+                        <div class="text-center">Copyright © Accessible Web Media { currentYear }</div>
+                    </div>
+                </div>
+            </footer>
+        
+        </div>
+		<script
+        src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+        crossorigin="anonymous" async></script>
+	</body>
+</html>
