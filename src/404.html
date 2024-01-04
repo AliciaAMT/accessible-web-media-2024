@@ -13,8 +13,8 @@
 
 
     <!-- update the version number as needed -->
-    <!-- <script defer src="/__/firebase/10.7.1/firebase-app-compat.js"></script>
-    include only the Firebase features as you need
+    <script defer src="/__/firebase/10.7.1/firebase-app-compat.js"></script>
+    <!-- include only the Firebase features as you need
     <script defer src="/__/firebase/10.7.1/firebase-auth-compat.js"></script>
     <script defer src="/__/firebase/10.7.1/firebase-database-compat.js"></script>
     <script defer src="/__/firebase/10.7.1/firebase-firestore-compat.js"></script>
@@ -28,7 +28,7 @@
       initialize the SDK after all desired features are loaded, set useEmulator to false
       to avoid connecting the SDK to running emulators.
     -->
-    <script defer src="/__/firebase/init.js?useEmulator=false"></script>
+    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
 
 
 
@@ -45,6 +45,11 @@
     <body id="page-top">
       <div style="display: contents">
           
+          
+              <script>
+               
+                  let currentYear = new Date().getFullYear();
+                </script>
                    <!-- Navigation-->
                   <!-- Masthead-->
                   <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav" style="background-color: rgba(0, 0, 0, 0.9);">
@@ -196,7 +201,7 @@
                 <footer class="footer py-4">
                   <div class="container">
                       <div class="row align-items-center justify-content-center">
-                        <div id="year" class="text-center">Copyright © Accessible Web Media </div>
+                          <div class="text-center">Copyright © Accessible Web Media { currentYear }</div>
                       </div>
                   </div>
               </footer>
@@ -245,8 +250,6 @@
           loadEl.textContent = 'Error loading the Firebase SDK, check the console.';
         }
       });
-    </script><script>
-  document.getElementById('year').textContent += new Date().getFullYear();
-</script>
+    </script>
   </body>
 </html>
