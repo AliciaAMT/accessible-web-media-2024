@@ -792,3 +792,10 @@ body {
   .text-muted {
     color: #b6bdc4 !important;
   }
+  .school img {
+    max-width: 100%;
+    height: auto;
+  }
+  .modal img {
+    max-height: 80vh; /* 80% of the viewport height */
+  }

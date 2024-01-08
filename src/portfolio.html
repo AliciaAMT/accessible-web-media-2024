@@ -27,7 +27,7 @@
                 <!-- Masthead-->
                 <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav" style="background-color: rgba(0, 0, 0, 0.9);">
                   <div class="container">
-                      <a class="navbar-brand js-scroll-trigger" href="#page-top" style="font-family: Lucida Grande,Lucida Sans Unicode,Lucida Sans,Geneva,Verdana,sans-serif; color: #37fbe7;">Accessible Web Media</a>
+                      <a class="navbar-brand js-scroll-trigger" href="index.html#page-top" style="font-family: Lucida Grande,Lucida Sans Unicode,Lucida Sans,Geneva,Verdana,sans-serif; color: #37fbe7;">Accessible Web Media</a>
                       <!-- <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                           Menu
                           <i class="fas fa-bars ml-1"></i>
@@ -87,8 +87,6 @@
               <header class="masthead">
               </header>
               <main class="py-4">
-             
-                  
                   <div class="container">
                     <header class="text-center">
                       <h1>Alicia Taylor</h1>
@@ -99,6 +97,7 @@
                       <h2>About Me</h2>
                       <p>I took online classes to learn full stack web development and information architecture. I currently hold several certifications, and am on path for my Bachelor's degree in Computer Science with IT Institute. The projects on this portfolio include my class projects, as well as personal projects.</p>
                       <p>Feel free to click the cards to explore my skills.</p>
+                      <p>Or see: <a class="js-scroll-trigger" href="#education">My Education</a> to see my schools and certifications.</p>
                     </section>
                     <section id="portfolio" class="my-5">
                         <h2 class="text-center w-100">Portfolio</h2>
@@ -109,6 +108,7 @@
                               {title: 'Password Generator', description: 'Simple app that generates a random password according to length and whether you want to you letters, numbers, or symbols. This is an example of form validation using Angular 17 and Bulma UI.', link: 'https://password-generator-update.vercel.app/', screenshot: './img/password.jpg'},
                               {title: 'Typing Challenge', description: 'Simple app that provides a typing challenge, and will not accept your answer until it has no mistakes. Mistakes are highlighted in red in real time. This is an example of form validation and events using Angular 17 and Bulma UI.', link: 'https://typing-game-jet-three.vercel.app/', screenshot: './img/typing.jpg'},
                               {title: 'Hextrix HD', description: 'Arcade game for Web and Play Store, Tetris-inspired with a twist. Features dark mode, dynamic background music toggle using JavaScript. Developed as a Progressive Web App, hosted on Firebase, and published on the Play Store via Android Studio.', link: 'https://hextris-hd-dark-mode-edition.web.app/', screenshot: './img/hex.jpg'},
+                              {title: 'Find The Frog', description: 'A little demo that demonstrates moving text, layered animation, and embedded audio triggered by mouse or gesture events.', link: 'https://aliciaamt.github.io/moving-text/', screenshot: './img/frogstart.jpg'},
                               // Add more projects as needed
                             ];
                             
@@ -150,8 +150,43 @@
                             });
                             </script>
                       </section>
-                      
-                      
+                  <section id="education" class="my-5">
+  <h2>Education</h2>
+  <ul id="schoolsList">
+    
+  </ul>
+  <div class="text-center">
+    <a href="diplomas.html"><button" class="btn btn-primary">View Diplomas</button></a>    
+</div>
+  <script>
+    let schools = [
+      {name: 'Riverdale High School', course: 'Honors Diploma', year: '1998'},
+      {name: 'Middle Tennessee State University', course: 'Spanish & Secondary Education', year: '1998-2000'},
+      {name: 'WebMD University', course: 'Management & Insurance Software, Mainframes', year: '2001-2003'},
+      {name: 'Middle Tennessee State University', course: 'Classical Guitar Performance & Music Composition', year: '2003-2004'},
+      {name: 'w3schools', course: 'HTML, CSS, JavaScript', year: '2005-2006'},
+      {name: 'Udemy', course: 'Git and GitHub, Narrative Design, Progressive Web Apps, Ionic, Firebase, Artificial Intelligence, React, Angular, Technical Writing, Android Play Store', year: '2019-current'},
+      {name: 'Harvard University', course: 'Computer Science, Rhetoric, Python', year: '2024-current'},
+      {name: 'Stanford University', course: 'Algorithms', year: '2024-current'},
+      {name: 'IBM', course: 'Git & GitHub, Project Management', year: '2024-current'},
+      {name: 'Linux Foundation', course: 'Develoment Operations and Reliability', year: '2024-current'}, 
+      {name: 'freeCodeCamp.org', course: 'Responsive Web Development', year: '2024-current'},
+      {name: 'Ionic Academy', course: 'Advanced Ionic', year: '2022-current'},
+      {name: 'Fireship', course: 'Angular Fire, Svelte', year: '2021-current'},
+      {name: 'W3C', course: 'Web Accessibility & WAI', year: '2023-current'},
+      {name: 'IT Institute', course: 'Computer Science', year: '2023-current'}
+      // Add more schools as needed
+    ];
+
+    let schoolsList = document.getElementById('schoolsList');
+
+    schools.forEach(school => {
+      let li = document.createElement('li');
+      li.textContent = `${school.name} - ${school.course} (${school.year})`;
+      schoolsList.appendChild(li);
+    });
+  </script>
+</section>
                     
                     <section id="contact" class="my-5">
                       <h2>Contact Me</h2>
@@ -181,10 +216,7 @@
                 
                 
                   </style>
-
-
-              </main>
-            
+              </main>            
               <!-- Footer-->
               <footer class="footer py-4">
                 <div class="container">
@@ -192,8 +224,7 @@
                         <div id="year" class="text-center">Copyright © Accessible Web Media </div>
                     </div>
                 </div>
-            </footer>
-        
+            </footer>        
         </div>
 		<script
         src="https://code.jquery.com/jquery-3.7.1.min.js"

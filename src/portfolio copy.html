@@ -1,0 +1,49 @@
+
+<section id="education" class="my-5">
+  <h2>Education</h2>
+  <div id="schoolsList">
+  
+  </div>
+
+  <script>
+    let schools = [
+      {name: 'Harvard University', course: 'Computer Science', year: '2020', images: ['harvard-cert.jpg']},
+      {name: 'Stanford University', course: 'Artificial Intelligence', year: '2021', images: []},
+      // Add more schools as needed
+    ];
+
+    let schoolsList = document.getElementById('schoolsList');
+
+    schools.forEach(school => {
+      let div = document.createElement('div');
+      div.className = 'school';
+
+      let h3 = document.createElement('h3');
+      h3.textContent = `${school.name} - ${school.course} (${school.year})`;
+      div.appendChild(h3);
+
+      if (school.images.length > 0) {
+        let button = document.createElement('button');
+        button.textContent = 'Show Certificates';
+        button.onclick = function() {
+          let imagesDiv = this.nextElementSibling;
+          imagesDiv.style.display = imagesDiv.style.display === 'none' ? 'block' : 'none';
+        };
+        div.appendChild(button);
+
+        let imagesDiv = document.createElement('div');
+        imagesDiv.style.display = 'none';
+        school.images.forEach(image => {
+          let img = document.createElement('img');
+          img.src = image;
+          img.alt = `Certificate from ${school.name}`;
+          imagesDiv.appendChild(img);
+        });
+        div.appendChild(imagesDiv);
+      }
+
+      schoolsList.appendChild(div);
+    });
+  </script>
+</section>
+                 
