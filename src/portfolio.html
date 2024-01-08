@@ -105,6 +105,8 @@
                               {title: 'Typing Challenge', description: 'Simple app that provides a typing challenge, and will not accept your answer until it has no mistakes. Mistakes are highlighted in red in real time. This is an example of form validation and events using Angular 17 and Bulma UI.', link: 'https://typing-game-jet-three.vercel.app/', screenshot: './img/typing.jpg'},
                               {title: 'Hextrix HD', description: 'Arcade game for Web and Play Store, Tetris-inspired with a twist. Features dark mode, dynamic background music toggle using JavaScript. Developed as a Progressive Web App, hosted on Firebase, and published on the Play Store via Android Studio.', link: 'https://hextris-hd-dark-mode-edition.web.app/', screenshot: './img/hex.jpg'},
                               {title: 'Find The Frog', description: 'A little demo that demonstrates moving text, layered animation, and embedded audio triggered by mouse or gesture events.', link: 'https://aliciaamt.github.io/moving-text/', screenshot: './img/frogstart.jpg'},
+                              {title: 'Kahal Echad', description: 'A Hebrew Roots and Messianic Fellowship and Bible Study App. Demonstrates a secure login system with Google Authentication, Bible Gateway API, Ionic, and more.', link: 'https://the-way-417.web.app', screenshot: './img/kahal.jpg'},
+                              {title: 'Wat Amphawan of America', description: 'A little website I made for Wat Amphawan as a thank you for their charity work.', link: 'https://wat-amphawan.web.app/', screenshot: './img/wat.jpg'},
                               // Add more projects as needed
                             ];
                             
@@ -178,7 +180,7 @@
 
     schools.forEach(school => {
       let li = document.createElement('li');
-      li.textContent = `${school.name} - ${school.course} (${school.year})`;
+      li.innerHTML = `<strong>${school.name}</strong> - ${school.course} (${school.year})`;
       schoolsList.appendChild(li);
     });
   </script>
