@@ -89,16 +89,22 @@
               </header>
               <main class="py-4">
 
-                    <!-- MODAL -->
-    <div class="modal fade" id="imageModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-          <div class="modal-body">
-            <img id="modalImage" src="" class="img-fluid">
+<!-- Modal -->
+<div class="modal fade" id="imageModal" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl" role="document">
+      <div class="modal-content">
+          <div class="modal-header">
+              <h5 class="modal-title" id="imageModalLabel">Diploma Image</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+              </button>
           </div>
-        </div>
+          <div class="modal-body">
+              <img src="" id="modalImage" class="img-fluid" alt="Image Preview">
+          </div>
       </div>
-    </div>
+  </div>
+</div>
     <!-- END OF MODAL -->
 <h1 class="text-center">Diplomas</h1>
                 <div class="container py-4">
@@ -134,10 +140,15 @@
                 </div>
             </footer>        
         </div>
-		<script
+
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+		<!-- <script
         src="https://code.jquery.com/jquery-3.7.1.min.js"
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
-        crossorigin="anonymous" async></script>
+        crossorigin="anonymous" async></script> -->
         <script>
             document.getElementById('year').textContent += new Date().getFullYear();
           </script>
@@ -151,8 +162,8 @@
           </script> -->
           <script>
             let diplomas = [
-              { src: 'img/wai.jpg', alt: '95793ca9a63246d8871469654dfdfdd3' },
-              { src: 'img/292508638-c6817786-e7f5-4c66-865c-4ff53d2b68d0.jpg', alt: '292508638-c6817786-e7f5-4c66-865c-4ff53d2b68d0' },
+              { src: 'img/wai.jpg', alt: 'Verified Certificate, W3Cx, This is to certify that Alicia Anne Taylor successfully completed and received a passing grade in WAI0.1x: Introduction to Web Accessibility a course of study offered by W3Cx, an online learning initiative of World Wide Web Consortium, Signed by: Shawn Lawton Henry, Web Accessibility Initiative (WAI) Program Leas W3C, and Marie-Claire Forgue, Head of Training W3C, edX Verified Certificate Issued January 14, 2024, Valid Certificate ID: 95793ca9a63246d8871469654dfdfdd3' },
+              { src: 'img/292508638-c6817786-e7f5-4c66-865c-4ff53d2b68d0.jpg', alt: 'Certificate of Completion: This is to certify that Alicia Taylor successfully completed 7 total hours of Narrative Design Master Class: Game Writing Essentials online course on April 1, 2021, Signed By: Emilio Padulo, Instructor, and Udemy, Certificate no: UC-63185964-7022-4482-bc52-4b88d3763432' },
               { src: 'img/292509419-b3b2f2ca-7e3d-45da-a7d8-28d381a7b596.jpg', alt: '292509419-b3b2f2ca-7e3d-45da-a7d8-28d381a7b596' },
               { src: 'img/292509223-9bc4c520-15af-4a64-afd8-c44ed762d3fb.jpg', alt: '292509223-9bc4c520-15af-4a64-afd8-c44ed762d3fb' },
               { src: 'img/292515115-61dc9e18-17ac-4c3b-80cc-2faf58096518.jpg', alt: '292515115-61dc9e18-17ac-4c3b-80cc-2faf58096518' },
@@ -175,7 +186,7 @@
               let img = document.createElement('img');
               img.src = diploma.src;
               img.alt = diploma.alt;
-              img.className = 'img-fluid diploma-img';
+              img.className = 'img-fluid diploma-img img-clickable';
               img.dataset.toggle = 'modal';
               img.dataset.target = '#diplomaModal';
               img.dataset.src = diploma.src;
@@ -184,13 +195,20 @@
               row.appendChild(col);
             });
           
-            $(document).ready(function() {
-  $('.diploma-img').on('click', function() {
-    var src = $(this).attr('src');
-    $('#modalImage').attr('src', src);
-    $('#imageModal').modal('show');
-  });
-});
+//             $(document).ready(function() {
+//   $('.diploma-img').on('click', function() {
+//     var src = $(this).attr('src');
+//     $('#modalImage').attr('src', src);
+//     $('#imageModal').modal('show');
+//   });
+// });
+$(document).ready(function () {
+        $(".img-clickable").click(function () {
+            var imageUrl = $(this).attr("src");
+            $("#modalImage").attr("src", imageUrl);
+            $("#imageModal").modal("show");
+        });
+    });
           </script>
 	</body>
 </html>

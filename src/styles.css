@@ -796,6 +796,28 @@ body {
     max-width: 100%;
     height: auto;
   }
-  .modal img {
-    max-height: 80vh; /* 80% of the viewport height */
-  }
+  /* .modal img {
+    max-height: 80vh; 
+  } */
+.modal {
+  
+  color: #16f9f1 !important; /* Change to your preferred color */
+}
+.modal-body {
+  background-color: #212529 !important; /* Change to your preferred color */
+}
+.modal-content {
+  border-bottom: #16f9f1 !important;
+  border-top: #16f9f1;
+}
+.modal-header {
+  background-color: #212121 !important; /* Change to your preferred color */
+  border-bottom: #16f9f1 !important; /* Change to your preferred color */
+}
+.modal-dialogue {
+  background-color: #212529 !important; /* Change to your preferred color */
+  border-bottom: #16f9f1 !important; /* Change to your preferred color */
+}
+.close {
+  color: #16f9f1 !important; /* Change to your preferred color */
+}
