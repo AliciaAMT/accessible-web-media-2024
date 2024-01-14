@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/AliciaAMT/accessible-web-media-2024#readme",
   "dependencies": {
+    "firebase": "^10.7.1",
     "http-server": "^14.1.1"
   }
 }
