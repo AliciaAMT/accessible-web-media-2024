@@ -16,6 +16,7 @@
 		<link rel="stylesheet" href="./styles.css" />
 	</head>
 	<body id="page-top">
+
 		<div style="display: contents">
 <!--         
         
@@ -87,6 +88,18 @@
               <header class="masthead">
               </header>
               <main class="py-4">
+
+                    <!-- MODAL -->
+    <div class="modal fade" id="imageModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-body">
+            <img id="modalImage" src="" class="img-fluid">
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- END OF MODAL -->
 <h1 class="text-center">Diplomas</h1>
                 <div class="container py-4">
                     <div class="row">
@@ -138,15 +151,17 @@
           </script> -->
           <script>
             let diplomas = [
-              { src: 'img/wai.jpg' },
-              { src: 'img/292508638-c6817786-e7f5-4c66-865c-4ff53d2b68d0.jpg' },
-              { src: 'img/292509419-b3b2f2ca-7e3d-45da-a7d8-28d381a7b596.jpg' },
-              { src: 'img/292509223-9bc4c520-15af-4a64-afd8-c44ed762d3fb.jpg' },
-              { src: 'img/292515115-61dc9e18-17ac-4c3b-80cc-2faf58096518.jpg' },
-              { src: 'img/292517382-937b3ae3-7614-4a89-aebb-781684a9c6a3.jpg' },
-              { src: 'img/292534544-a0563e38-efed-4e30-9e71-c609e1ce9a2e.jpg' },
-              { src: 'img/UC-8bea0291-9f04-43b6-82c3-45b0a2416063.jpg' },
-              { src: 'img/UC-26aa22dd-a74c-4dfd-8fa9-7a0534c9c776.jpg' }
+              { src: 'img/wai.jpg', alt: '95793ca9a63246d8871469654dfdfdd3' },
+              { src: 'img/292508638-c6817786-e7f5-4c66-865c-4ff53d2b68d0.jpg', alt: '292508638-c6817786-e7f5-4c66-865c-4ff53d2b68d0' },
+              { src: 'img/292509419-b3b2f2ca-7e3d-45da-a7d8-28d381a7b596.jpg', alt: '292509419-b3b2f2ca-7e3d-45da-a7d8-28d381a7b596' },
+              { src: 'img/292509223-9bc4c520-15af-4a64-afd8-c44ed762d3fb.jpg', alt: '292509223-9bc4c520-15af-4a64-afd8-c44ed762d3fb' },
+              { src: 'img/292515115-61dc9e18-17ac-4c3b-80cc-2faf58096518.jpg', alt: '292515115-61dc9e18-17ac-4c3b-80cc-2faf58096518' },
+              { src: 'img/292517382-937b3ae3-7614-4a89-aebb-781684a9c6a3.jpg', alt: '292517382-937b3ae3-7614-4a89-aebb-781684a9c6a3' },
+              { src: 'img/292534544-a0563e38-efed-4e30-9e71-c609e1ce9a2e.jpg', alt: '292534544-a0563e38-efed-4e30-9e71-c609e1ce9a2e' },
+              { src: 'img/UC-8bea0291-9f04-43b6-82c3-45b0a2416063.jpg', alt: 'UC-8bea0291-9f04-43b6-82c3-45b0a2416063' },
+              { src: 'img/UC-26aa22dd-a74c-4dfd-8fa9-7a0534c9c776.jpg', alt: 'UC-26aa22dd-a74c-4dfd-8fa9-7a0534c9c776' }
+
+
 
               // Add more diploma objects as needed
             ];
@@ -159,6 +174,7 @@
           
               let img = document.createElement('img');
               img.src = diploma.src;
+              img.alt = diploma.alt;
               img.className = 'img-fluid diploma-img';
               img.dataset.toggle = 'modal';
               img.dataset.target = '#diplomaModal';
@@ -169,11 +185,12 @@
             });
           
             $(document).ready(function() {
-              $('.diploma-img').on('click', function() {
-                var src = $(this).data('src');
-                $('#diplomaModal img').attr('src', src);
-              });
-            });
+  $('.diploma-img').on('click', function() {
+    var src = $(this).attr('src');
+    $('#modalImage').attr('src', src);
+    $('#imageModal').modal('show');
+  });
+});
           </script>
 	</body>
 </html>
